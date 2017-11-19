@@ -1,0 +1,35 @@
+To Run Code:
+
+
+
+1. Download the model from our Google Drive on:
+https://drive.google.com/open?id=0ByMf8Xu6lwG6TDFIOXJJSUp0eEE
+
+
+
+2. In two python files, alter the url to the location of the stored data model
+    
+a) summerProject\dublinbusjourney\dublinbuspredict\Algorithms\project_central.py LINE- 73
+    
+b) summerProject\dublinbusjourney\dublinbuspredict\Algorithms\time_date.py LINE - 154
+
+    
+
+See example below of format that should be used:
+    
+"C:\\Users\\steph\\OneDrive\\cleaning\\trained_modelv10.pkl"
+
+
+
+3. Open Comannd Line, move into directory of project: summerProject\dublinbusjourney\
+
+
+4. Enter command: python manage.py runserver 127.0.0.1:8000
+
+
+5. Open up a web page and enter in 127.0.0.1:8000/dublinbuspredict
+
+
+Access to code repository:
+A) Code repository for first draft only - https://github.com/smoles92/summerProject
+B) Code repository for final working solution - https://github.com/LukeO1/summerProject

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+
+        <title>Tourism</title>
+
+        <!-- If IE use the latest rendering engine -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- Required for mobile sizing: Set the page to the width of the device and set the zoom level -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Font for side navbar Awesome CDN Source: http://fontawesome.io/ -->
+        <script src="https://use.fontawesome.com/e8a4c811a1.js"></script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		
+		 <!-- Load google translate bar-->
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        
+		<!-- Loading in static files -->
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'dublinbuspredict/css/style.css' %}" />
+        <script type="text/javascript" src="{% static 'dublinbuspredict/js/jsIndex.js' %}"></script>
+        <script type="text/javascript" src="{% static 'dublinbuspredict/js/main.js' %}"></script>
+        <script type="text/javascript" src="{% static 'dublinbuspredict/js/tourism.js' %}"></script>     
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHxpqeoG1jNA4VHBlFeopWuRmFoYTh-ME&callback=tourismMap"></script>
+           
+        <style type="text/css">@font-face { 
+    				font-family: 'London-Tube'; 
+    				src:local('fontName Regular'),
+        			local('London-Tube'), 
+        			url({% static 'dublinbuspredict/fonts/London-Tube.ttf' %}) format('truetype');
+    				} 
+		</style>
+		<script>
+			var stopIcon2 = "{% static "dublinbuspredict/css/images/icon.png" %}";
+    		var sportIcon = "{% static "dublinbuspredict/css/images/sport.png" %}";
+    		var museumIcon = "{% static "dublinbuspredict/css/images/museum.png" %}";
+    		var musicIcon = "{% static "dublinbuspredict/css/images/music.png" %}";
+    		var beerIcon = "{% static "dublinbuspredict/css/images/beer.png" %}";
+    		var parkIcon = "{% static "dublinbuspredict/css/images/park.png" %}";
+    		var shoppingIcon = "{% static "dublinbuspredict/css/images/shopping.png" %}";
+    		var sightsIcon = "{% static "dublinbuspredict/css/images/sights.png" %}";
+    		var myLocationIcon = "{% static "dublinbuspredict/css/images/myLocation.png" %}";
+    	</script>
+    </head>
+    <body>
+        <!-- Container for both Navbar and Side-Navbar -->
+        <div class="container-fluid">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="navbar-left">
+                            <a href="#" class="custom-white" style="cursor:pointer"  onclick="openNav()">
+                                <span class="glyphicon glyphicon-menu-hamburger"></span>
+                            </a></li>
+                        {% load static %}
+                        <li class="navbar-right">
+                        <!-- Google Translation -->
+                        <div id="translate_icon"> 
+                        <img id="translate_logo" alt="Translate logo" src="{% static 'dublinbuspredict/css/images/translate.png' %}" class="img-responsive" >
+                          </div>  	
+                            <div id="google_translate_element"></div>  
+                        <img id="db_logo" alt="Dublin Bus Logo" src="{% static 'dublinbuspredict/css/images/dblogo.png' %}" class="img-responsive" ></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div id="w3-buttons">
+                    <a href="/dublinbuspredict/" class="w3-bar-item w3-button"><i class="fa fa-home fa-fw"></i>&nbsp;Home</a>
+                    <a href="/dublinbuspredict/tickets_fares" class="w3-bar-item w3-button"><i class="fa fa-eur fa-fw"></i>&nbsp;Tickets & Fares</a>
+                    <a href="/dublinbuspredict/tourism" class="w3-bar-item w3-button"><i class="fa fa-map fa-fw"></i>&nbsp;Tourism</a>
+                    <a href="/dublinbuspredict/connections" class="w3-bar-item w3-button"><i class="fa fa-train fa-fw"></i>&nbsp;Connections</a>
+                    <a href="/dublinbuspredict/contact" class="w3-bar-item w3-button"><i class="fa fa-phone fa-fw"></i>&nbsp;Contact Us</a>
+                </div>
+                <div id="social-media" class="row col-lg-12 my-social-icons">
+                    <a target="_blank" href="https://twitter.com/dublinbusnews" class="col-xs-2 btn btn-social-icon btn-twitter"><span class="fa fa-twitter"></span></a>
+                    <a target="_blank" href="https://www.facebook.com/DublinBusNews/" class="col-xs-2 btn btn-social-icon btn-facebook"><span class="fa fa-facebook"></span></a>
+                    <a target="_blank" href="https://www.instagram.com/dublinbusnews/?hl=en" class="col-xs-2 btn btn-social-icon btn-instagram"><span class="fa fa-instagram"></span></a>
+                    <a target="_blank" href="https://ie.linkedin.com/company/dublin-bus-bus-tha-cliath" class="col-xs-2 btn btn-social-icon btn-linkedin"><span class="fa fa-linkedin"></span></a>
+                    <a target="_blank" href="https://github.com/LukeO1/summerProject" class="col-xs-2 btn btn-social-icon btn-google"><span class="fa fa-github"></span></a>
+                </div>
+            </div>
+        </div>
+
+		<!-- Main container for Map and Lists -->
+        <div class="container-fluid" onclick="closeNav()">
+            <div class="row">
+            <div id="tourism_main_container">
+                <div class="col-lg-8" id="map_tourism"></div>
+                <div class="col-lg-4" onclick="closeNav()">
+                	<div id="floating-panel" class="hidden-xs">
+                		<button id="buttonLocation" class="button"><i class="fa fa-crosshairs" aria-hidden="true"></i></button>
+            		</div>
+            		<div class="row" id="tourism_buttons">
+                        <button type="button" class="btn btn-lg col-lg-6 col-xs-12 col-sm-12" id="TourismButton">Points of Interest</button>
+                        <button type="button" class="btn btn-lg col-lg-6 col-xs-12 col-sm-12" id="VenuesButton">Venues</button>
+                    </div>
+            		<div class="row events_interests_contents" id="toggleTourismTable">
+                        <div class="list_styling text-left"><br>
+                            &nbsp;<i class="fa fa-university fa-fw"></i>&nbsp;<b>Museums</b>
+                            <a href="#" id="1">Trinity College Dublin</a>
+                            <a href="#" id="2">National Gallery of Ireland</a>
+                            <a href="#" id="3">The Little Museum of Dublin</a>
+                            <a href="#" id="4">The G.P.O</a>
+                            <a href="#" id="5">Collins Barracks</a>
+                            <a href="#" id="6">Dublin Castle</a>
+                            <a href="#" id="7">Irish Museum of Modern Art (IMMA)</a>
+                            <br>
+                            &nbsp;<i class="fa fa-binoculars fa-fw"></i>&nbsp;<b>Sights</b>
+                            <a href="#" id="8">St. Patrick's Cathedral</a>
+                            <a href="#" id="11">Dublin Zoo</a>
+                            <a href="#" id="12">Farmleigh House</a>
+                            <br>
+                            &nbsp;<i class="fa fa-beer fa-fw"></i>&nbsp;<b>Tours</b>
+                            <a href="#" id="9">Guinness Storehouse</a>
+                            <a href="#" id="10">Old Jameson Distellery</a>
+                            <br>
+                            &nbsp;<i class="fa fa-shopping-bag fa-fw"></i>&nbsp;<b>Shopping</b>
+                            <a href="#" id="13">Grafton Street</a>
+                            <br>
+                            &nbsp;<i class="fa fa-tree fa-fw"></i>&nbsp;<b>Park</b>
+                            <a href="#" id="14">St. Stephen's Green</a>
+                            <a href="#" id="15">National Botanic Gardens</a>
+                        </div>
+                  	</div>
+                 	<div class="row events_interests_contents" id="toggleVenuesTable">
+                        <div class="list_styling text-left"><br>
+                            <i class="fa fa-futbol-o fa-fw"></i>&nbsp;<b>Sports</b>
+                            <a href="#" id="6v">Aviva Stadium</a>
+                            <a href="#" id="2v">Croke Park</a>
+                            <br>
+                            <i class="fa fa-music fa-fw"></i>&nbsp;<b>Music and Arts</b>
+                            <a href="#" id="1v">The Point</a>
+                            <a href="#" id="3v">The National Concert Hall</a>
+                            <a href="#" id="4v">Vicar Street</a>
+                            <a href="#" id="5v">The Olympia Theatre</a>
+                            <a href="#" id="7v">RDS Arena</a>
+                            <a href="#" id="10v">The Convention Centre</a>
+                            <a href="#" id="11v">Iveagh Gardens</a>
+                            <a href="#" id="12v">Bord Gais Energy Theatre</a>
+                            <a href="#" id="13v">Marlay Park</a>
+                        </div>
+                  	</div>
+        		</div>
+        	</div>
+      	</div>
+      	</div>
+                
+        
+        <!-- Footer -->
+        <div class="container-fluid" onclick="closeNav()">
+            <div class="row">
+                <footer class="fixed-bottom my-new-footer">
+                    <div class="row">
+                        {% load static %}
+                        <div class="col-sm-3 text-center hidden-xs"><img src="{% static 'dublinbuspredict/css/images/TFI%20(2).png' %}">
+                        </div>
+                        <div class="col-sm-3 text-center"><h4>Information</h4>
+                            <li><a href="/dublinbuspredict/">Home</a></li>
+                            <li><a href="/dublinbuspredict/tickets_fares">Tickets & Fares</a></li>
+                            <li><a href="/dublinbuspredict/tourism">Tourism</a></li>
+                            <li><a href="/dublinbuspredict/connections">Connections</a></li>
+                            <li><a href="/dublinbuspredict/contact">Contact Us</a></li>
+                        </div>
+                        <div class="col-sm-3 text-center"><h4>External Links</h4>
+                            <li><a target="_blank" href="https://www.luas.ie/">Luas</a></li>
+                            <li><a target="_blank" href="http://www.buseireann.ie/">Bus Eireann</a></li>
+                            <li><a target="_blank" href="http://www.irishrail.ie/">Irish Rail</a></li>
+                        </div>
+                        <div class="col-sm-3 text-center hidden-xs"><img id="bly_img" src="{% static 'dublinbuspredict/css/images/logonobg.png' %}">
+                        </div>
+                    </div>
+
+                    <!-- Footer: Copyright Section -->
+                    <p class="text-center" style="padding:10px;">&copy; Copyright 2017</p>
+                </footer>
+            </div>
+        </div>
+
+        <!-- jQuery file: Needs to be pasted above Bootstrap file to avoid errors -->    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    </body>
+</html>

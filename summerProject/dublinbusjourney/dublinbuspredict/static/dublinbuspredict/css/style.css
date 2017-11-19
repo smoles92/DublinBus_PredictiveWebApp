@@ -1,0 +1,816 @@
+/* Section: Multiple Pages */
+body{
+   min-height:300px;
+   font-family: London-Tube;
+}
+
+@media screen and (max-width:480px) { 
+	#google_translate_element div.goog-te-gadget-simple{
+	display: none;
+	}
+	
+	#translate_icon{
+	display: none;
+	}
+	
+	#google_translate_element{
+	display: none;
+	}
+  #db_logo {
+    display: none;
+  }
+  #form-input{
+    margin-left: 0px;
+  }
+ 
+}
+
+@font-face {
+  font-family: 'London-Tube';
+  src: url('../fonts/London-Tube.ttf');
+  src: local('London-Tube.ttf')
+}
+
+h2{
+    font-size: 18px;
+}
+
+h3{
+	font-weight: bold;
+    font-size: 20px;
+}
+
+
+/* Multiple Pages - FontPalace, 2016  */
+@font-face {
+    font-family: VolvoBroad;
+    src: url(VolvoBroad.ttf);
+}
+
+
+/* Multiple Pages - Navigation bar. */
+.navbar-fixed-top{
+	display: block;
+    width: 100%;
+    background-color: #FFD527;
+    color: white;
+}
+
+.navbar-nav {
+    width: 100%;
+    height: 65px;
+    background-color: #FFD527;
+    position: fixed;
+}
+
+.navbar-nav > li {
+    float: none;
+    display: inline-block;
+}
+.navbar-nav > li.navbar-left {
+    margin-top: 5px;
+}
+
+.navbar-nav > li.navbar-right {
+    float: right !important;
+    margin-right: 30px;
+    width: 355px;
+    display: block;
+}
+
+.glyphicon-menu-hamburger {
+  color: white;
+}
+
+.custom-white {
+    color:#fff;
+    font-size: 30px;
+}
+
+.nav>li>a.custom-white:hover .glyphicon, 
+.nav>li>a.custom-white:active .glyphicon,
+.nav>li>a.custom-white:focus .glyphicon{
+    color: rgba(0,0,0,0.4);
+}
+
+/* Translation Bar*/
+
+#translate_logo{
+	height: 20px;
+	width: 20px;
+	display: inline-block;
+}
+
+#translate_icon{
+	margin-top: 32px;
+	position: absolute;
+}
+
+#google_translate_element{
+	font-family: London-Tube;
+	z-index: 1000;
+	top: 30px;
+    right: 200px;
+    bottom: 35px;
+    position: absolute;
+    display: flex;
+    background-color: #FFD527;
+    height: auto !important;
+}
+html.translated-ltr body nav.navbar.navbar-default.navbar-fixed-top { 
+	padding-top: 41px; 
+	}
+
+#google_translate_element div.goog-te-gadget-simple{
+    border: 0px;
+	background-color:#FFD527;
+	font-family: London-Tube;
+	height: auto !important;
+}
+
+#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value {
+	font-family: London-Tube;
+		text-decoration-color: #808080;
+	}
+
+#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span{
+	color:white;
+	font-family: London-Tube;
+		text-decoration-color: #808080;
+	}
+
+#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span:hover{
+	color:#ffffff;
+	text-decoration: underline;
+	text-decoration-color: #808080;
+	}
+
+.goog-te-gadget-icon{
+	display:none !important;
+	}
+
+/* Multiple Pages - Navigation Bar - Changes the colour when you hover over in Responsive mode */
+.navbar-toggle {
+    float: left;
+    z-index:3;
+    color: white;
+    border: none;
+}
+
+.navbar-toggle: hover{
+    z-index:3;
+    background-color: white;
+}
+
+
+/* Multiple Pages - Logo for Dublin Bus*/
+#db_logo{
+    width: 160px;
+    height: 40px;`
+    display: inline-block;
+    float: right;
+    margin-top: 15px;
+}
+
+
+/* Multiple Pages - Logo for Hamburger Menu Icon*/
+#menu_hb{
+    width: 35px;
+    height: 35px;
+}
+
+
+/* Multiple Pages - Side Navigation Bar */
+.sidenav {
+    margin-top: 60px;
+    height: 100%;
+    margin-top: -3;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 0;
+    left: 0;
+    background-color: #3594D4;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+}
+
+#w3-buttons a {
+    text-decoration: none;
+    padding-left: 15px;
+    padding-right: 0px;
+    font-size: 16px;
+    color: white;
+    display: block;
+    height: 50px;
+}
+
+#w3-buttons a:hover{
+    background-color: rgba(0,0,0,0.1);
+}
+
+#social-media a{
+    text-decoration: none;
+    padding-left: 15px;
+    padding-right: 0px;
+    font-size: 16px;
+    color: white;
+    display: block;
+    height: 50px;
+}
+
+#social-media a:hover{
+    color: rgba(0,0,0,0.1);
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    border-bottom-color: white;
+    top: 10px;
+    right: 25px;
+    font-size: 30px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+      padding: 0px;
+      margin: 0;
+    }
+  .sidenav a {
+      font-size: 18px;
+      padding: 0px;
+      margin: 0;
+    }
+}
+
+
+/* Multiple Pages (Index/Map Forms) - Drop down Menus*/
+.dropdown-list {
+    overflow: auto;
+    max-height: 200px;
+    height: 200px;
+    text-align: left;
+}
+
+.menu dropdown {
+    overflow: auto;
+    max-height: 200px;
+    height: 200px;
+    text-align: left;
+}
+
+.dropdown {
+    position: relative;
+    list-style-type: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    text-align: left;
+}
+
+ul {
+	text-align: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    text-align: left;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: #f1f1f1
+	}
+
+.dropdown.open .dropdown-content {
+	width: 100%;
+    display: block;
+}
+
+.btn.btn-primary[disabled] {
+	background-color: #004C99;
+    color: white;
+}
+
+#resultArray0{
+	display: none;
+}
+
+#resultArray1{
+	display: none;
+}
+
+#resultArray2{
+	display: none;
+}
+
+
+/* Multiple Pages - Footer */
+.my-new-footer{
+    padding: 25px;
+    background-color: #0c2864;
+    list-style-type: none;
+    color: white;
+    font-size: 12px;
+    bottom: 0;
+    width: 100%;
+}
+
+.my-new-footer a{
+    color: white;
+}
+
+#bly_img{
+	height: 80px;
+    width: 180px;
+}
+
+/* index.html */
+
+#primary{
+    position: relative;
+    display: block;
+    height: 500px;
+    overflow: hidden;
+    margin-top: 10px;
+    margin: 0;
+}
+
+#my-carousel{
+	top: 25px;
+    height: 100%;
+    max-height:450px;
+    overflow: hidden;
+    position: relative;	
+}
+
+#scrollpage{
+    margin-top: -10px;
+    width: 100%;
+    display: inline-block;
+    height: 50px;
+    text-align: center;
+}
+
+#scrollbtn{
+    height: 50px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.my-twitter-feed{
+	text-align: left;
+    margin: 10px;
+    max-height: 500px;
+    overflow-x: hidden;  
+    overflow-y: auto;  
+}
+
+.my-twitter-content{
+	text-align: left;
+	font-size: 13px;
+    padding-bottom: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.my-sidebar-left{
+    margin-top: 20px;
+    border-right: solid 1px gray;
+}
+
+.my-sidebar-center{
+    margin-top: 20px;
+    border-right: solid 1px gray;
+}
+
+.my-sidebar-right{
+    margin-top: 20px;
+    float: right;
+    overflow: hidden;
+}
+
+.my-index-information{
+	margin-top: 50px;
+	margin-left: 20px;
+	margin-bottom: -20px;
+}
+
+
+/* Display result*/
+.output{
+  list-style: none;
+  padding: 20px;
+  font: normal 16px/22px;
+  font-family: London-Tube;
+  color: #999;
+  text-align: left;
+  float: left;
+}
+
+li.passed {
+  margin-left: 20px;
+  overflow: hidden;
+  position: relative;
+  padding: 0 0 10px 35px;
+}
+
+li.passed::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 20px;
+    height: 999px;
+    border: 2px solid #3594D4;
+    border-width: 2px 0 0 2px;
+}
+
+li.passed:last-child::before {
+  	border-width: 2px 0 0;
+}
+
+li.passed::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border: 2px solid #3594D4;
+    border-radius: 50%;
+}
+
+li.passed {
+ 	color: #000;
+}
+
+li.passed::before,
+li.passed::after {
+  	border-color: #3594D4;
+}
+
+
+
+
+/* index.html - Form */
+.my-index-form{
+	margin-top: 80px;
+	margin-bottom: 20px;
+}
+#time-input-index{
+	width: 100px;
+}
+
+.form-control{
+    height: 45px;
+}
+
+
+
+
+/* map.html */
+.my-timetable{
+    margin-top: 100px;
+}
+
+.my-map-form{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#map{
+	margin-top: 35px;
+    height: 400px;
+    width: 100%;
+}
+
+#floating-panel2 {
+  	right: 10px;
+   	background: rgba(255, 255, 255, 0.9);
+    height: 29px;
+    width:30px;
+    position: absolute;
+    top: 235px;
+    border: none;
+    z-index: 5;
+    -moz-box-shadow: 0 0 3px #ccc;
+    -webkit-box-shadow: 0 0 3px #ccc;
+    box-shadow: 0 0 3px #ccc;
+    text-align: center;
+}
+
+#buttonLocation2{
+    height: 29px;
+    width: 30px; 
+    padding: 0;
+    font: 11px Arial,Helvetica,Sans-serif;
+    background: rgba(255, 255, 255, 1);
+    color: #595959;
+    border: none;
+    margin-bottom: 50px;
+}
+
+#buttonLocation:hover {
+  box-shadow: inset 0 0 0 60px rgba(0, 0, 0, 0.1);
+}
+
+
+.my-map-div{
+    margin-top: 50px;
+}
+
+/* map.html: Weather Styling */ 
+#wrapper{
+	position: relative;
+	width: 100%;
+}
+
+#displayWeather{
+	position: absolute;
+	top: 0;
+	right:0;
+	float: right;
+	width : 120px;
+	height : 150px;
+	text-align: center;
+	background: rgba(255, 255, 255, 0.9);
+	color: slategrey;
+	border-top: 5px;
+	z-index: 99;
+}
+
+#wTemp1 {
+  	font-size: 20px !important;
+    text-align: center;
+    display : inline-block;
+    margin-top: 0;
+}
+
+#wTemp2 {
+  	font-size: 20px;
+    display : inline;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+#wTemp3 {
+  font-size: 20px;
+  display : inline-block; 
+  font-weight: bold;
+  margin-top: 0;
+}
+
+#wIcon {
+    font-size: 30px;
+    display : block;   
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#wDesc {
+  	font-size: 15px;
+  	display : inline-block;   
+    overflow: hidden;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.my-result{
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+
+h6{
+	letter-spacing:1px;
+	font-size:14px;
+	font-family: London-Tube;
+	color: #232943;
+	font-weight: bold;
+}
+
+.resultHeadings{
+	border-bottom: solid 1px gray;
+}
+
+h5{
+	font-size:12px;
+	font-weight: bold;
+	font-family: 'London-Tube';
+}
+
+.my-changed-journey{
+    padding: 10px;
+    width: 100%;
+}
+
+
+
+
+/* connections.html */
+.my-connections-photo{
+    margin-top: 40px;
+}
+
+#my-connections-body{
+	margin-bottom: 60px;
+}
+
+.my-connections-heading-container{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.my-connection-statement{
+    margin-left: 0px; 
+    margin-top: 40px;   
+}
+
+.my-connection-information{
+    margin-left: 0px; 
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+
+
+
+/* tickets_fares.html */
+
+#my-ticket-body{
+	margin-bottom: 30px;
+}
+
+.my-ticket-heading-container{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.my-ticket-statement{
+    margin-left: 0px; 
+    margin-top: 40px;    
+}
+
+.my-ticket-choices{
+    margin-left: 0px; 
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.lead{
+	font-size: 17px;
+}
+
+.table-responsive{
+	font-size: 12px;
+}
+
+
+
+
+/* contact.html */
+.my-contact-photo {
+    margin-top: 65px;
+}
+
+.my-contact-information{ 
+	margin-top: 65px;
+}
+
+.my-profile-photo{
+	margin-bottom: 20px;
+}
+
+.my-profile{
+    padding: 15px;
+}
+
+
+
+
+/* tourism.html */
+#tourism_main_container{
+	margin: 65px auto 0;
+}
+
+#map_tourism{
+    height: 550px;
+    white-space: nowrap;
+    
+}
+
+/* tourism.html: Geo-location button: Google Map*/
+#floating-panel {
+  	right: 429px;
+   	background: rgba(255, 255, 255, 0.9);
+    height: 29px;
+    width:30px;
+    position: absolute;
+    top: 435px;
+    border: none;
+    z-index: 5;
+    -moz-box-shadow: 0 0 3px #ccc;
+    -webkit-box-shadow: 0 0 3px #ccc;
+    box-shadow: 0 0 3px #ccc;
+    text-align: center;
+}
+
+#buttonLocation{
+    height: 29px;
+    width: 30px; 
+    padding: 0;
+    font: 11px Arial,Helvetica,Sans-serif;
+    background: rgba(255, 255, 255, 1);
+    color: #595959;
+    border: none;
+    margin-bottom: 50px;
+}
+
+#buttonLocation:hover {
+  box-shadow: inset 0 0 0 60px rgba(0, 0, 0, 0.1);
+}
+
+#toggleTourismTable{
+	display: block;
+	margin-left: 3px;
+	font-size: 11px;
+}
+
+#toggleVenuesTable{
+	margin-left: 3px;
+	font-size: 11px;
+}
+
+#tourism_buttons{
+    white-space: nowrap;
+}
+
+.events_interests_contents{
+    display: none;
+}
+
+.list_styling{
+    background-color: white;        
+}
+
+.list_styling a{
+    padding-top: 5px;
+    text-decoration: none;
+    padding-left: 35px;
+    padding-right: 0px;
+    color: black;
+    display: block;
+    height: 22px;  
+}
+
+.list_styling li{
+    padding-top: 5px;
+    text-decoration: none;
+    padding-left: 15px;
+    padding-right: 0px;
+    color: black;
+    display: block;
+    height: 22px;
+}
+
+.list_styling a:hover{
+    background-color: rgba(0,0,0,0.1); 
+}
+
+#TourismButton{
+	background-color:#0c2864;
+	color:white; 
+	border-radius: 0 !important;
+}
+
+#TourismButton:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+	color:#0c2864;
+}
+
+#VenuesButton{
+	background-color:#0c2864;
+	color:white; 
+	border-radius: 0 !important;
+}
+
+#VenuesButton:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+	color:#0c2864;
+}
